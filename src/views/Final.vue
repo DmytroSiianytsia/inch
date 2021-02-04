@@ -14,21 +14,13 @@
     />
     <div class="final-pg__content">
       <div class="final-pg__statistic">
-        <div class="final-pg__statistic-item">
-          <div class="final-pg__percents">{{ params && params.sad * 20 }}%</div>
-          <div class="final-pg__drug">Препарат 1</div>
-        </div>
-        <div class="final-pg__statistic-item">
-          <div class="final-pg__percents">
-            {{ params && params.happy * 20 }}%
-          </div>
-          <div class="final-pg__drug">Препарат 2</div>
-        </div>
-        <div class="final-pg__statistic-item">
-          <div class="final-pg__percents">
-            {{ params && params.heart * 20 }}%
-          </div>
-          <div class="final-pg__drug">Препарат 3</div>
+        <div
+          class="final-pg__statistic-item"
+          v-for="(param, key, idx) in params"
+          :key="key"
+        >
+          <div class="final-pg__percents">{{ param && param * 20 }}%</div>
+          <div class="final-pg__drug">Препарат {{ idx + 1 }}</div>
         </div>
       </div>
       <h2 class="final-pg__subtitle">Ваш результат:</h2>

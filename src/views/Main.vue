@@ -162,7 +162,7 @@ export default {
         this.numClient < 4 && this.numClient++
         this.drugN = ""
         this.isDisabled = false
-      }, 1000)
+      }, 800)
 
       sum < 5 && this.params[param]++
     },
