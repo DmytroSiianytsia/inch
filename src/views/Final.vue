@@ -75,6 +75,12 @@ export default {
     margin-top: 19px;
     width: 34px;
     height: 32px;
+
+    transition: all 0.5s;
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
   }
 
   &__picture {
@@ -140,6 +146,26 @@ export default {
 
     background: linear-gradient(90deg, #d9d9d9 0%, #a1a1a1 100%);
     border-radius: 100px;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      z-index: -1;
+
+      background: linear-gradient(90deg, #a1a1a1 0%, #d9d9d9 100%);
+      border-radius: 100px;
+      transition: opacity 0.5s;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
   }
 }
 </style>

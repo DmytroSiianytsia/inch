@@ -5,14 +5,14 @@
         <div class="left-bar__header">
           <router-link class="left-bar__btn" to="/">
             <img
-              class="header-icon"
+              class="header-icon header-icon_home"
               src="../assets/home.svg"
               alt="link to home"
             />
           </router-link>
           <div class="left-bar__btn" @click="refresh">
             <img
-              class="header-icon"
+              class="header-icon header-icon_refresh"
               src="../assets/refresh.svg"
               alt="refresh"
             />
@@ -22,15 +22,28 @@
           <h2 class="left-bar__param">Параметры:</h2>
           <div class="left-bar__items">
             <div class="left-bar__item">
-              <img class="content-icon" src="../assets/sad_icon.svg" alt="" />
+              <img
+                class="content-icon"
+                id="sad"
+                src="../assets/sad_icon.svg"
+                alt="sad icon"
+              />
               <div class="statistic">{{ params.sad }}</div>
             </div>
             <div class="left-bar__item">
-              <img class="content-icon" src="../assets/happy_icon.svg" alt="" />
+              <img
+                class="content-icon"
+                src="../assets/happy_icon.svg"
+                alt="happy icon"
+              />
               <div class="statistic">{{ params.happy }}</div>
             </div>
             <div class="left-bar__item">
-              <img class="content-icon" src="../assets/heart_icon.svg" alt="" />
+              <img
+                class="content-icon"
+                src="../assets/heart_icon.svg"
+                alt="heart icon"
+              />
               <div class="statistic">{{ params.heart }}</div>
             </div>
           </div>
@@ -250,6 +263,16 @@ export default {
     margin-top: 18px;
     width: 34px;
     height: 34px;
+
+    transition: all 0.5s;
+
+    &_home:hover {
+      transform: rotateY(180deg);
+    }
+
+    &_refresh:hover {
+      transform: rotate(180deg);
+    }
   }
 
   &__param {
@@ -349,6 +372,11 @@ export default {
     color: white;
     outline: none;
     cursor: pointer;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__button_purple {
